@@ -388,6 +388,53 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
+              "name": "User Login Request",
+              "description": "The user submits login credentials through the application to Auth0 Universal Login. Auth0 validates the credentials and performs MFA where enabled.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "User Login Request"
+            ],
+            "id": "b5f1a3f9-6f58-49b8-89bd-a6ece9d09550",
+            "source": {
+              "cell": "2e566da3-3869-4153-9894-0bcd520aff76",
+              "port": "9a242343-a1c2-433b-8e45-ce25141c337c"
+            },
+            "target": {
+              "cell": "927f9b1d-a3c2-4bbc-b7cf-141b07edf570",
+              "port": "f139a6e2-f800-4e30-8dea-37ce507481d8"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
               "name": "Authentication Tokens",
               "description": "Auth0 returns an ID token and access token after successful authentication. The tokens contain identity and authorization claims.",
               "outOfScope": false,
@@ -416,7 +463,7 @@
             "vertices": [
               {
                 "x": 460,
-                "y": 90
+                "y": 150
               }
             ]
           },
@@ -440,8 +487,8 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "User Login Request",
-              "description": "The user submits login credentials through the application to Auth0 Universal Login. Auth0 validates the credentials and performs MFA where enabled.",
+              "name": "Authenticated User Request",
+              "description": "The application forwards the authenticated user request and relevant user identity and authorization claims to the AI Agent.",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
@@ -454,20 +501,636 @@
               "trustBoundaryIds": []
             },
             "labels": [
-              "User Login Request"
+              "Authenticated User Request"
             ],
-            "id": "b5f1a3f9-6f58-49b8-89bd-a6ece9d09550",
+            "id": "3effd079-4d1a-4742-9b9b-52735670ff15",
             "source": {
-              "cell": "2e566da3-3869-4153-9894-0bcd520aff76",
-              "port": "9a242343-a1c2-433b-8e45-ce25141c337c"
+              "x": 520,
+              "y": 232
+            },
+            "target": {
+              "cell": "a3794a0e-bde7-4c67-a6c1-80fbf88e971d",
+              "port": "a1f4aa8a-8395-4a03-a8d1-5c0956d970a8"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "M2M Token Request",
+              "description": "The AI Agent requests an OAuth access token using its registered machine-to-machine client credentials.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "M2M Token Request"
+            ],
+            "id": "3bd36297-c0f7-4777-ae05-dd796e17739b",
+            "source": {
+              "x": 780,
+              "y": 260
+            },
+            "target": {
+              "cell": "ea22b4ca-f79b-4506-9370-0a01f0a4b185",
+              "port": "a1f4aa8a-8395-4a03-a8d1-5c0956d970a8"
+            }
+          },
+          {
+            "position": {
+              "x": 460,
+              "y": 200
+            },
+            "size": {
+              "width": 60,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Customer Service Application"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 11,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "07d2adac-4dc1-4d33-be57-591d85ff67ff"
+                },
+                {
+                  "group": "right",
+                  "id": "62d1b58d-816e-4015-b226-dc6ee018ba50"
+                },
+                {
+                  "group": "bottom",
+                  "id": "342181b1-56ea-47be-ae6d-78f5367e490e"
+                },
+                {
+                  "group": "left",
+                  "id": "f139a6e2-f800-4e30-8dea-37ce507481d8"
+                }
+              ]
+            },
+            "id": "03762fd0-8eb5-4d21-9775-fa9a94c32cc5",
+            "data": {
+              "type": "tm.Process",
+              "name": "Customer Service Application",
+              "description": "SecureNova's customer-facing application that allows customers and employees to access AI-powered customer support. It redirects users to Auth0 for authentication, validates authentication tokens, and forwards authorised requests to the AI Agent.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 720,
+              "y": 230
+            },
+            "size": {
+              "width": 60,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "AI Agent"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "7fa1d1bf-0689-4f90-a8cc-2eb2e77c079c"
+                },
+                {
+                  "group": "right",
+                  "id": "cd4e5882-7730-49af-b483-c9e0375681ee"
+                },
+                {
+                  "group": "bottom",
+                  "id": "a1f4aa8a-8395-4a03-a8d1-5c0956d970a8"
+                },
+                {
+                  "group": "left",
+                  "id": "255790d0-88c7-40c8-811a-f039c5a47ea9"
+                }
+              ]
+            },
+            "id": "a3794a0e-bde7-4c67-a6c1-80fbf88e971d",
+            "zIndex": 12,
+            "data": {
+              "type": "tm.Process",
+              "name": "AI Agent",
+              "description": "AI-powered customer service agent that receives authenticated user requests, processes instructions using an LLM, retrieves relevant information from the RAG pipeline, and invokes authorised MCP tools and internal REST APIs.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 780,
+              "y": 90
+            },
+            "size": {
+              "width": 60,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "OAuth M2M Client"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "7fa1d1bf-0689-4f90-a8cc-2eb2e77c079c"
+                },
+                {
+                  "group": "right",
+                  "id": "cd4e5882-7730-49af-b483-c9e0375681ee"
+                },
+                {
+                  "group": "bottom",
+                  "id": "a1f4aa8a-8395-4a03-a8d1-5c0956d970a8"
+                },
+                {
+                  "group": "left",
+                  "id": "255790d0-88c7-40c8-811a-f039c5a47ea9"
+                }
+              ]
+            },
+            "id": "ea22b4ca-f79b-4506-9370-0a01f0a4b185",
+            "zIndex": 13,
+            "data": {
+              "type": "tm.Process",
+              "name": "OAuth M2M Client",
+              "description": "Machine-to-machine OAuth client that authenticates with Auth0 using the Client Credentials Flow to obtain access tokens with specifically assigned API scopes.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": []
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 14,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Client Credentials Grant",
+              "description": "The M2M client sends its client authentication credentials to Auth0 and requests an access token with assigned scopes.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Client Credentials Grant"
+            ],
+            "id": "72809760-a270-4f27-a42d-ad4da645f7a6",
+            "source": {
+              "x": 840,
+              "y": 117
             },
             "target": {
               "cell": "927f9b1d-a3c2-4bbc-b7cf-141b07edf570",
-              "port": "f139a6e2-f800-4e30-8dea-37ce507481d8"
+              "port": "62d1b58d-816e-4015-b226-dc6ee018ba50"
             },
-            "vertices": [],
             "tools": {
               "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
                 "boundary",
                 "button-remove",
                 "vertices",
@@ -590,126 +1253,6 @@
                 "target-arrowhead"
               ],
               "name": null
-            }
-          },
-          {
-            "position": {
-              "x": 460,
-              "y": 200
-            },
-            "size": {
-              "width": 60,
-              "height": 60
-            },
-            "attrs": {
-              "text": {
-                "text": "Customer Service Application"
-              },
-              "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
-                "strokeDasharray": null
-              }
-            },
-            "visible": true,
-            "shape": "process",
-            "zIndex": 11,
-            "ports": {
-              "groups": {
-                "top": {
-                  "position": "top",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "right": {
-                  "position": "right",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "bottom": {
-                  "position": "bottom",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "left": {
-                  "position": "left",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                }
-              },
-              "items": [
-                {
-                  "group": "top",
-                  "id": "07d2adac-4dc1-4d33-be57-591d85ff67ff"
-                },
-                {
-                  "group": "right",
-                  "id": "62d1b58d-816e-4015-b226-dc6ee018ba50"
-                },
-                {
-                  "group": "bottom",
-                  "id": "342181b1-56ea-47be-ae6d-78f5367e490e"
-                },
-                {
-                  "group": "left",
-                  "id": "f139a6e2-f800-4e30-8dea-37ce507481d8"
-                }
-              ]
-            },
-            "id": "03762fd0-8eb5-4d21-9775-fa9a94c32cc5",
-            "data": {
-              "type": "tm.Process",
-              "name": "Customer Service Application",
-              "description": "SecureNova's customer-facing application that allows customers and employees to access AI-powered customer support. It redirects users to Auth0 for authentication, validates authentication tokens, and forwards authorised requests to the AI Agent.",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "handlesCardPayment": false,
-              "handlesGoodsOrServices": false,
-              "isWebApplication": false,
-              "privilegeLevel": "",
-              "threats": []
             }
           }
         ],
