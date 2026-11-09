@@ -35,8 +35,8 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "9c96e376-77ba-4853-b6e6-d9ca462cf340",
             "zIndex": -1,
+            "id": "9c96e376-77ba-4853-b6e6-d9ca462cf340",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Trust Boundary",
@@ -171,11 +171,11 @@
           {
             "position": {
               "x": 410,
-              "y": -70
+              "y": -99.99999999999997
             },
             "size": {
-              "width": 60,
-              "height": 60
+              "width": 80,
+              "height": 100
             },
             "attrs": {
               "text": {
@@ -301,9 +301,7 @@
                 }
               ]
             },
-            "children": [
-              "a2ba60da-23c8-4bbc-a4ca-c6cd81c96d14"
-            ]
+            "children": []
           },
           {
             "shape": "flow",
@@ -371,58 +369,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Authentication Request",
-              "description": "The application redirects the user to Auth0 Universal Login for authentication using OIDC Authorization Code Flow with PKCE.",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
-            },
-            "labels": [
-              "Authentication Request"
-            ],
-            "id": "48fa2b8e-f3dc-4ed8-8c48-3f11ff937148",
-            "source": {
-              "x": 520,
-              "y": 229
-            },
-            "target": {
-              "cell": "927f9b1d-a3c2-4bbc-b7cf-141b07edf570",
-              "port": "62d1b58d-816e-4015-b226-dc6ee018ba50"
-            },
-            "vertices": [
-              {
-                "x": 580,
-                "y": 150
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "User Login Request",
               "description": "The user submits login credentials through the application to Auth0 Universal Login. Auth0 validates the credentials and performs MFA where enabled.",
               "outOfScope": false,
@@ -451,58 +397,6 @@
               "port": "f139a6e2-f800-4e30-8dea-37ce507481d8"
             },
             "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Authentication Tokens",
-              "description": "Auth0 returns an ID token and access token after successful authentication. The tokens contain identity and authorization claims.",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
-            },
-            "labels": [
-              "Authentication Tokens"
-            ],
-            "id": "eda0fa70-7912-4310-8025-9f1e45de078d",
-            "source": {
-              "cell": "927f9b1d-a3c2-4bbc-b7cf-141b07edf570",
-              "port": "f139a6e2-f800-4e30-8dea-37ce507481d8"
-            },
-            "target": {
-              "cell": "03762fd0-8eb5-4d21-9775-fa9a94c32cc5",
-              "port": "07d2adac-4dc1-4d33-be57-591d85ff67ff"
-            },
-            "vertices": [
-              {
-                "x": 460,
-                "y": 150
-              }
-            ]
           },
           {
             "shape": "flow",
@@ -594,104 +488,6 @@
             "target": {
               "cell": "ea22b4ca-f79b-4506-9370-0a01f0a4b185",
               "port": "a1f4aa8a-8395-4a03-a8d1-5c0956d970a8"
-            }
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Client Credentials Grant",
-              "description": "The M2M client sends its client authentication credentials to Auth0 and requests an access token with assigned scopes.",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
-            },
-            "labels": [
-              "Client Credentials Grant"
-            ],
-            "id": "125a03d9-8164-41db-b9af-d54527d97c9c",
-            "source": {
-              "x": 805,
-              "y": 70
-            },
-            "target": {
-              "cell": "927f9b1d-a3c2-4bbc-b7cf-141b07edf570",
-              "port": "62d1b58d-816e-4015-b226-dc6ee018ba50"
-            },
-            "vertices": [
-              {
-                "x": 660,
-                "y": 30
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "M2M Access Token",
-              "description": "Auth0 validates the M2M client and returns a signed access token containing the authorised API scopes.",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
-            },
-            "labels": [
-              "M2M Access Token"
-            ],
-            "id": "9182081e-3a8b-4f67-8526-99ee63580dac",
-            "source": {
-              "x": 520,
-              "y": 59
-            },
-            "target": {
-              "cell": "ea22b4ca-f79b-4506-9370-0a01f0a4b185",
-              "port": "255790d0-88c7-40c8-811a-f039c5a47ea9"
             }
           },
           {
@@ -1335,8 +1131,8 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
-              "description": "",
+              "name": "Authentication Tokens",
+              "description": "Auth0 returns an ID token and access token after successful authentication. The tokens contain identity and authorization claims.",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
@@ -1349,28 +1145,522 @@
               "trustBoundaryIds": []
             },
             "labels": [
-              "Data Flow"
+              "Authentication Tokens"
             ],
-            "id": "a2ba60da-23c8-4bbc-a4ca-c6cd81c96d14",
+            "id": "eda0fa70-7912-4310-8025-9f1e45de078d",
             "source": {
               "cell": "927f9b1d-a3c2-4bbc-b7cf-141b07edf570",
-              "port": "62d1b58d-816e-4015-b226-dc6ee018ba50"
+              "port": "342181b1-56ea-47be-ae6d-78f5367e490e"
+            },
+            "target": {
+              "cell": "03762fd0-8eb5-4d21-9775-fa9a94c32cc5",
+              "port": "07d2adac-4dc1-4d33-be57-591d85ff67ff"
+            },
+            "vertices": [
+              {
+                "x": 540,
+                "y": 110
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "M2M Access Token",
+              "description": "Auth0 validates the M2M client and returns a signed access token containing the authorised API scopes.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "M2M Access Token"
+            ],
+            "id": "9182081e-3a8b-4f67-8526-99ee63580dac",
+            "source": {
+              "cell": "927f9b1d-a3c2-4bbc-b7cf-141b07edf570",
+              "port": "342181b1-56ea-47be-ae6d-78f5367e490e"
+            },
+            "target": {
+              "cell": "ea22b4ca-f79b-4506-9370-0a01f0a4b185",
+              "port": "255790d0-88c7-40c8-811a-f039c5a47ea9"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Authentication Request",
+              "description": "The application redirects the user to Auth0 Universal Login for authentication using OIDC Authorization Code Flow with PKCE.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Authentication Request"
+            ],
+            "id": "48fa2b8e-f3dc-4ed8-8c48-3f11ff937148",
+            "source": {
+              "cell": "03762fd0-8eb5-4d21-9775-fa9a94c32cc5",
+              "port": "07d2adac-4dc1-4d33-be57-591d85ff67ff"
+            },
+            "target": {
+              "cell": "927f9b1d-a3c2-4bbc-b7cf-141b07edf570",
+              "port": "342181b1-56ea-47be-ae6d-78f5367e490e"
+            },
+            "vertices": [
+              {
+                "x": 380,
+                "y": 100
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Client Credentials Grant",
+              "description": "The M2M client sends its client authentication credentials to Auth0 and requests an access token with assigned scopes.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Client Credentials Grant"
+            ],
+            "id": "125a03d9-8164-41db-b9af-d54527d97c9c",
+            "source": {
+              "x": 700,
+              "y": 50
             },
             "target": {
               "cell": "927f9b1d-a3c2-4bbc-b7cf-141b07edf570",
               "port": "62d1b58d-816e-4015-b226-dc6ee018ba50"
             },
-            "vertices": [],
-            "parent": "927f9b1d-a3c2-4bbc-b7cf-141b07edf570"
+            "vertices": [
+              {
+                "x": 660,
+                "y": 30
+              }
+            ],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
+            }
           },
           {
             "position": {
-              "x": 460,
-              "y": 200
+              "x": 420,
+              "y": 210.00000000000023
             },
             "size": {
-              "width": 60,
-              "height": 60
+              "width": 90,
+              "height": 70
             },
             "attrs": {
               "text": {
@@ -1605,12 +1895,12 @@
           },
           {
             "position": {
-              "x": 770,
-              "y": 70
+              "x": 710,
+              "y": -89.99999999999997
             },
             "size": {
-              "width": 60,
-              "height": 60
+              "width": 80,
+              "height": 90
             },
             "attrs": {
               "text": {
@@ -1721,6 +2011,13 @@
               "isWebApplication": false,
               "privilegeLevel": "",
               "threats": []
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -1744,6 +2041,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 14,
             "ports": {
               "groups": {
                 "top": {
@@ -1827,7 +2125,6 @@
               ]
             },
             "id": "caa88620-03f1-4495-9bf1-ff791085a764",
-            "zIndex": 14,
             "data": {
               "type": "tm.Actor",
               "name": "LLM Provider",
@@ -1864,6 +2161,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 15,
             "ports": {
               "groups": {
                 "top": {
@@ -1947,7 +2245,6 @@
               ]
             },
             "id": "735109de-cd48-4fe8-9424-f91201fc773c",
-            "zIndex": 15,
             "data": {
               "type": "tm.Store",
               "name": "LLM API Key Vault",
@@ -1985,6 +2282,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 16,
             "ports": {
               "groups": {
                 "top": {
@@ -2068,7 +2366,6 @@
               ]
             },
             "id": "15f50adc-0d0d-4541-832f-8fd5c007a910",
-            "zIndex": 16,
             "data": {
               "type": "tm.Process",
               "name": "RAG Pipeline Service",
@@ -2108,6 +2405,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 17,
             "ports": {
               "groups": {
                 "top": {
@@ -2191,7 +2489,6 @@
               ]
             },
             "id": "d6ba3c28-1027-46f3-bcd8-6e42b4379716",
-            "zIndex": 17,
             "data": {
               "type": "tm.Store",
               "name": "Vector Knowledge Base",
@@ -2229,6 +2526,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 18,
             "ports": {
               "groups": {
                 "top": {
@@ -2312,7 +2610,6 @@
               ]
             },
             "id": "cd33abac-77fd-4249-8ab1-0673d1b4cd5a",
-            "zIndex": 18,
             "data": {
               "type": "tm.Process",
               "name": "MCP Server",
@@ -2349,6 +2646,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 19,
             "ports": {
               "groups": {
                 "top": {
@@ -2432,7 +2730,6 @@
               ]
             },
             "id": "e0f53269-9279-40c3-b79b-2d84915c72b2",
-            "zIndex": 19,
             "data": {
               "type": "tm.Process",
               "name": "Internal REST API",
@@ -2469,6 +2766,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 20,
             "ports": {
               "groups": {
                 "top": {
@@ -2552,7 +2850,6 @@
               ]
             },
             "id": "b5453e7e-d98c-4d4f-882d-2acf75a03ab3",
-            "zIndex": 20,
             "data": {
               "type": "tm.Process",
               "name": "Customer Database",
