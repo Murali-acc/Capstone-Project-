@@ -269,8 +269,8 @@
                 "text": "Auth0 Identity Provider"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -367,26 +367,12 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": [
-                {
-                  "id": "5d2e3bc4-ecfa-48f0-8b5e-348d5dfeb2b1",
-                  "title": "New STRIDE threat",
-                  "status": "Open",
-                  "severity": "TBD",
-                  "type": "Spoofing",
-                  "description": "Provide a description for this threat",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
-                  "modelType": "STRIDE",
-                  "new": true,
-                  "number": 1,
-                  "score": ""
-                }
-              ]
+              "threats": []
             },
             "children": []
           },
@@ -540,7 +526,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -561,13 +548,58 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
+              "threats": [
+                {
+                  "id": "2548a4e9-fd78-4940-a03e-330102f20afb",
+                  "title": "Authentication Request Tampering",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "An attacker modifies authentication parameters or token-related data to manipulate the login process.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": ""
+                },
+                {
+                  "id": "0e143c4a-0008-44b3-b90f-b7df647ad43f",
+                  "title": "Credential and Token Exposure",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "User credentials, access tokens, or identity information are exposed through insecure transmission or application logs.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": ""
+                },
+                {
+                  "id": "01e7bed9-e5bb-404b-b4c8-3b4633c3d725",
+                  "title": "Authentication Service Overload",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Denial of service",
+                  "description": "An attacker sends excessive login requests, preventing legitimate users from accessing the application.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 2,
+                "denialOfService": 1
+              }
             },
             "labels": [
               "Authentication Request"
@@ -583,8 +615,16 @@
             },
             "vertices": [
               {
+                "x": 440,
+                "y": 180
+              },
+              {
                 "x": 380,
                 "y": 100
+              },
+              {
+                "x": 400,
+                "y": 40
               }
             ]
           },
@@ -592,7 +632,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -613,13 +654,58 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
+              "threats": [
+                {
+                  "id": "33f880ee-c223-4da5-9582-799e7847341e",
+                  "title": "OAuth Token Request Manipulation",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "An attacker modifies token requests or requested scopes to manipulate authorisation.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 11,
+                  "score": ""
+                },
+                {
+                  "id": "390fe546-43a9-4da1-9397-a59f654d0a6a",
+                  "title": "M2M Client Secret Exposure",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "Client secrets or access tokens are exposed through insecure storage, transmission, or logging.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 12,
+                  "score": ""
+                },
+                {
+                  "id": "c297f64c-99f0-4de5-a147-2c87d29e7497",
+                  "title": "Auth0 Token Endpoint Overload",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Denial of service",
+                  "description": "Excessive token requests overwhelm the authentication endpoint.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 13,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 1
+              }
             },
             "labels": [
               "Client Credentials Grant"
@@ -736,7 +822,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -757,16 +844,61 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
+              "threats": [
+                {
+                  "id": "9c21daef-98cc-4458-beec-df79bd132ab4",
+                  "title": "LLM Prompt and Response Tampering",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "An attacker modifies prompts, request parameters, or generated responses to influence agent behaviour.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 14,
+                  "score": ""
+                },
+                {
+                  "id": "9bb20107-ac7e-459a-9783-748e6299f597",
+                  "title": "LLM API Key and Prompt Exposure",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "API keys, system prompts, or confidential customer information are exposed to unauthorised parties.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 15,
+                  "score": ""
+                },
+                {
+                  "id": "4d77c1bf-b1c4-4788-bac1-c62fabb3a125",
+                  "title": "LLM API Quota Exhaustion",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Denial of service",
+                  "description": "An attacker generates excessive LLM requests and consumes the available API quota.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 16,
+                  "score": ""
+                }
+              ],
               "trustBoundaryIds": [
                 "e71f5342-68e5-4234-a446-2d79972d10fd",
                 "09d4fa11-b558-45ab-831a-5dea5e004bda"
-              ]
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 1
+              }
             },
             "labels": [
               "LLM Prompt Request"
@@ -780,13 +912,19 @@
               "cell": "caa88620-03f1-4495-9bf1-ff791085a764",
               "port": "d6154129-5bd6-4c3d-bec4-8a841d6b06b4"
             },
-            "vertices": []
+            "vertices": [
+              {
+                "x": 920,
+                "y": 210
+              }
+            ]
           },
           {
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -807,16 +945,61 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
+              "threats": [
+                {
+                  "id": "d0e2fa57-383d-4edc-a43c-2a7735ec0811",
+                  "title": "API Request Parameter Tampering",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "An attacker modifies API requests, customer IDs, or request parameters to manipulate backend operations.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": ""
+                },
+                {
+                  "id": "06f50c67-5903-41ec-bd3b-f80a9b4109a7",
+                  "title": "Unauthorised API Data Exposure",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "The API returns confidential customer information to an unauthorised agent or user.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 9,
+                  "score": ""
+                },
+                {
+                  "id": "d703975b-75ad-4050-9d43-fb1cc85b469b",
+                  "title": "Internal API Resource Exhaustion",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Denial of service",
+                  "description": "Excessive or malicious agent requests overload the internal REST API.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 10,
+                  "score": ""
+                }
+              ],
               "trustBoundaryIds": [
                 "e71f5342-68e5-4234-a446-2d79972d10fd",
                 "09d4fa11-b558-45ab-831a-5dea5e004bda"
-              ]
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 1
+              }
             },
             "labels": [
               "Authenticated API Request"
@@ -829,7 +1012,13 @@
             "target": {
               "cell": "e0f53269-9279-40c3-b79b-2d84915c72b2",
               "port": "f681253a-11a5-4f3d-b4fd-a7be68effdb0"
-            }
+            },
+            "vertices": [
+              {
+                "x": 930,
+                "y": 280
+              }
+            ]
           },
           {
             "shape": "flow",
@@ -1084,7 +1273,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -1105,16 +1295,61 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
+              "threats": [
+                {
+                  "id": "213337c0-2d21-4033-a6c9-febc9337dd80",
+                  "title": "RAG Document and Chunk Poisoning",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "An attacker modifies knowledge documents or inserts malicious chunks to manipulate agent responses.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 17,
+                  "score": ""
+                },
+                {
+                  "id": "23619620-5fc3-4c3a-a762-5483c7d7b769",
+                  "title": "Unauthorised Knowledge Base Disclosure",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "Confidential documents or restricted knowledge chunks are retrieved by unauthorised users.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 18,
+                  "score": ""
+                },
+                {
+                  "id": "93c0ed87-3a91-49c7-b78f-f2124d9a96c8",
+                  "title": "Vector Database Resource Exhaustion",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Denial of service",
+                  "description": "Excessive retrieval requests overload the RAG service or vector database.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 19,
+                  "score": ""
+                }
+              ],
               "trustBoundaryIds": [
                 "e71f5342-68e5-4234-a446-2d79972d10fd",
                 "09d4fa11-b558-45ab-831a-5dea5e004bda"
-              ]
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 1
+              }
             },
             "labels": [
               "RAG Query"
@@ -1127,6 +1362,22 @@
             "target": {
               "cell": "15f50adc-0d0d-4541-832f-8fd5c007a910",
               "port": "f681253a-11a5-4f3d-b4fd-a7be68effdb0"
+            },
+            "vertices": [
+              {
+                "x": 940,
+                "y": 100
+              }
+            ],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
             }
           },
           {
@@ -2609,7 +2860,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -2630,13 +2882,58 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
+              "threats": [
+                {
+                  "id": "b6b5ce65-d118-444b-b4d8-2d4af005bb4b",
+                  "title": "MCP Tool Argument and Response Tampering",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "An attacker modifies tool arguments or responses to manipulate internal operations.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 20,
+                  "score": ""
+                },
+                {
+                  "id": "a5133ec7-688b-4c3e-8e29-db7ccce3a89a",
+                  "title": "MCP Tool Information Exposure",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "MCP tools expose confidential customer records, credentials, or internal service information.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 21,
+                  "score": ""
+                },
+                {
+                  "id": "138c650a-1bc8-432d-9cad-9786493c3772",
+                  "title": "Malicious MCP Tool Execution Loops",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Denial of service",
+                  "description": "Repeated or malicious tool invocations exhaust server resources and disrupt services.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 22,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 1
+              }
             },
             "labels": [
               "MCP API Invocation"
@@ -2663,6 +2960,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 1
+    "threatTop": 22
   }
 }
