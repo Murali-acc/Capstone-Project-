@@ -21,16 +21,16 @@
         "cells": [
           {
             "position": {
-              "x": 109.99999999999977,
-              "y": -39.99999999999977
+              "x": 111.25,
+              "y": -160.00000000000028
             },
             "size": {
               "width": 150,
-              "height": 320
+              "height": 600
             },
             "attrs": {
               "label": {
-                "text": "Trust Boundary"
+                "text": "User Layer Boundary"
               }
             },
             "visible": true,
@@ -39,8 +39,8 @@
             "id": "9c96e376-77ba-4853-b6e6-d9ca462cf340",
             "data": {
               "type": "tm.BoundaryBox",
-              "name": "Trust Boundary",
-              "description": "",
+              "name": "User Layer Boundary",
+              "description": "Separates external users from the trusted application and identity infrastructure.",
               "isTrustBoundary": true,
               "hasOpenThreats": false,
               "crossingFlows": [
@@ -48,6 +48,93 @@
               ],
               "containedElements": [
                 "2e566da3-3869-4153-9894-0bcd520aff76"
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 335.9999999999991,
+              "y": -180.00000000000028
+            },
+            "size": {
+              "width": 580,
+              "height": 600
+            },
+            "attrs": {
+              "label": {
+                "text": "AI Agent Layer Boundary"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "e71f5342-68e5-4234-a446-2d79972d10fd",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "AI Agent Layer Boundary",
+              "description": "Separates the AI agent execution environment and its credentials from protected internal services.",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [
+                "7a5f251d-29bb-47bd-aab0-862e2e96c533",
+                "b5f1a3f9-6f58-49b8-89bd-a6ece9d09550",
+                "53af0f68-20cb-452a-8561-f8b54435af6a",
+                "fca4d4c3-9257-48a9-aafc-a7663bd3c342",
+                "fa668bc3-94ab-4156-a6c7-35c72d5bcb1c",
+                "ccf89803-418a-459f-8583-126dc07d01ed",
+                "7680e22c-0443-4cc1-8716-9c008e8a4bc3",
+                "5a9fdf88-769a-4938-b146-348c105747e3",
+                "40cbc78d-acee-4d90-81d3-39a98a35cc32"
+              ],
+              "containedElements": [
+                "927f9b1d-a3c2-4bbc-b7cf-141b07edf570",
+                "03762fd0-8eb5-4d21-9775-fa9a94c32cc5",
+                "a3794a0e-bde7-4c67-a6c1-80fbf88e971d",
+                "ea22b4ca-f79b-4506-9370-0a01f0a4b185",
+                "735109de-cd48-4fe8-9424-f91201fc773c"
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 981.9999999999991,
+              "y": -179.99999999999926
+            },
+            "size": {
+              "width": 500,
+              "height": 600
+            },
+            "attrs": {
+              "label": {
+                "text": "Internal API Layer Boundary"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "09d4fa11-b558-45ab-831a-5dea5e004bda",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Internal API Layer Boundary",
+              "description": "Protects internal APIs, RAG/MCP services, and business data from unauthorised access.",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [
+                "53af0f68-20cb-452a-8561-f8b54435af6a",
+                "fca4d4c3-9257-48a9-aafc-a7663bd3c342",
+                "fa668bc3-94ab-4156-a6c7-35c72d5bcb1c",
+                "ccf89803-418a-459f-8583-126dc07d01ed",
+                "7680e22c-0443-4cc1-8716-9c008e8a4bc3",
+                "5a9fdf88-769a-4938-b146-348c105747e3",
+                "40cbc78d-acee-4d90-81d3-39a98a35cc32"
+              ],
+              "containedElements": [
+                "caa88620-03f1-4495-9bf1-ff791085a764",
+                "15f50adc-0d0d-4541-832f-8fd5c007a910",
+                "d6ba3c28-1027-46f3-bcd8-6e42b4379716",
+                "cd33abac-77fd-4249-8ab1-0673d1b4cd5a",
+                "e0f53269-9279-40c3-b79b-2d84915c72b2",
+                "b5453e7e-d98c-4d4f-882d-2acf75a03ab3"
               ]
             }
           },
@@ -334,7 +421,9 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "e71f5342-68e5-4234-a446-2d79972d10fd"
+              ]
             },
             "labels": [
               "Customer Support Request"
@@ -381,7 +470,8 @@
               "protocol": "",
               "threats": [],
               "trustBoundaryIds": [
-                "9c96e376-77ba-4853-b6e6-d9ca462cf340"
+                "9c96e376-77ba-4853-b6e6-d9ca462cf340",
+                "e71f5342-68e5-4234-a446-2d79972d10fd"
               ]
             },
             "labels": [
@@ -712,216 +802,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Authenticated User Request",
-              "description": "The application forwards the authenticated user request and relevant user identity and authorization claims to the AI Agent.",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
-            },
-            "labels": [
-              "Authenticated User Request"
-            ],
-            "id": "3effd079-4d1a-4742-9b9b-52735670ff15",
-            "source": {
-              "cell": "03762fd0-8eb5-4d21-9775-fa9a94c32cc5",
-              "port": "342181b1-56ea-47be-ae6d-78f5367e490e"
-            },
-            "target": {
-              "cell": "a3794a0e-bde7-4c67-a6c1-80fbf88e971d",
-              "port": "a1f4aa8a-8395-4a03-a8d1-5c0956d970a8"
-            },
-            "vertices": [
-              {
-                "x": 550,
-                "y": 280
-              },
-              {
-                "x": 640,
-                "y": 220
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "MCP Tool Request",
-              "description": "The AI Agent sends a tool invocation request with arguments to the MCP Server. The server validates the request and the agent's authorisation before executing the permitted tool.",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
-            },
-            "labels": [
-              "MCP Tool Request"
-            ],
-            "id": "5a9fdf88-769a-4938-b146-348c105747e3",
-            "source": {
-              "cell": "a3794a0e-bde7-4c67-a6c1-80fbf88e971d",
-              "port": "cd4e5882-7730-49af-b483-c9e0375681ee"
-            },
-            "target": {
-              "cell": "cd33abac-77fd-4249-8ab1-0673d1b4cd5a",
-              "port": "f681253a-11a5-4f3d-b4fd-a7be68effdb0"
-            },
-            "vertices": [
-              {
-                "x": 820,
-                "y": 70
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "MCP Tool Response",
-              "description": "The MCP Server returns the result of the executed authorised tool to the AI Agent.",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
-            },
-            "labels": [
-              "MCP Tool Response"
-            ],
-            "id": "7680e22c-0443-4cc1-8716-9c008e8a4bc3",
-            "source": {
-              "cell": "cd33abac-77fd-4249-8ab1-0673d1b4cd5a",
-              "port": "243e7cb2-6e5e-48fc-a70c-93083c0b9f65"
-            },
-            "target": {
-              "cell": "a3794a0e-bde7-4c67-a6c1-80fbf88e971d",
-              "port": "a1f4aa8a-8395-4a03-a8d1-5c0956d970a8"
-            },
-            "vertices": [
-              {
-                "x": 970,
-                "y": 20
-              },
-              {
-                "x": 790,
-                "y": 190
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "RAG Query",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
-            },
-            "labels": [
-              "RAG Query"
-            ],
-            "id": "ccf89803-418a-459f-8583-126dc07d01ed",
-            "source": {
-              "cell": "a3794a0e-bde7-4c67-a6c1-80fbf88e971d",
-              "port": "cd4e5882-7730-49af-b483-c9e0375681ee"
-            },
-            "target": {
-              "cell": "15f50adc-0d0d-4541-832f-8fd5c007a910",
-              "port": "243e7cb2-6e5e-48fc-a70c-93083c0b9f65"
-            }
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "LLM Prompt Request",
               "description": "The AI Agent sends a prompt and relevant context to the external LLM provider, authenticating using the securely retrieved API key.",
               "outOfScope": false,
@@ -933,7 +813,10 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "e71f5342-68e5-4234-a446-2d79972d10fd",
+                "09d4fa11-b558-45ab-831a-5dea5e004bda"
+              ]
             },
             "labels": [
               "LLM Prompt Request"
@@ -980,7 +863,10 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "e71f5342-68e5-4234-a446-2d79972d10fd",
+                "09d4fa11-b558-45ab-831a-5dea5e004bda"
+              ]
             },
             "labels": [
               "Authenticated API Request"
@@ -1026,7 +912,10 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "e71f5342-68e5-4234-a446-2d79972d10fd",
+                "09d4fa11-b558-45ab-831a-5dea5e004bda"
+              ]
             },
             "labels": [
               "LLM Generated Response"
@@ -1042,8 +931,8 @@
             },
             "vertices": [
               {
-                "x": 1050,
-                "y": 280
+                "x": 930,
+                "y": 330
               },
               {
                 "x": 820,
@@ -1242,13 +1131,228 @@
             }
           },
           {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "RAG Query",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "e71f5342-68e5-4234-a446-2d79972d10fd",
+                "09d4fa11-b558-45ab-831a-5dea5e004bda"
+              ]
+            },
+            "labels": [
+              "RAG Query"
+            ],
+            "id": "ccf89803-418a-459f-8583-126dc07d01ed",
+            "source": {
+              "cell": "a3794a0e-bde7-4c67-a6c1-80fbf88e971d",
+              "port": "cd4e5882-7730-49af-b483-c9e0375681ee"
+            },
+            "target": {
+              "cell": "15f50adc-0d0d-4541-832f-8fd5c007a910",
+              "port": "f681253a-11a5-4f3d-b4fd-a7be68effdb0"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "MCP Tool Response",
+              "description": "The MCP Server returns the result of the executed authorised tool to the AI Agent.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "e71f5342-68e5-4234-a446-2d79972d10fd",
+                "09d4fa11-b558-45ab-831a-5dea5e004bda"
+              ]
+            },
+            "labels": [
+              "MCP Tool Response"
+            ],
+            "id": "7680e22c-0443-4cc1-8716-9c008e8a4bc3",
+            "source": {
+              "cell": "cd33abac-77fd-4249-8ab1-0673d1b4cd5a",
+              "port": "243e7cb2-6e5e-48fc-a70c-93083c0b9f65"
+            },
+            "target": {
+              "cell": "a3794a0e-bde7-4c67-a6c1-80fbf88e971d",
+              "port": "cd4e5882-7730-49af-b483-c9e0375681ee"
+            },
+            "vertices": [
+              {
+                "x": 870,
+                "y": 90
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Authenticated User Request",
+              "description": "The application forwards the authenticated user request and relevant user identity and authorization claims to the AI Agent.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Authenticated User Request"
+            ],
+            "id": "3effd079-4d1a-4742-9b9b-52735670ff15",
+            "source": {
+              "cell": "03762fd0-8eb5-4d21-9775-fa9a94c32cc5",
+              "port": "62d1b58d-816e-4015-b226-dc6ee018ba50"
+            },
+            "target": {
+              "cell": "a3794a0e-bde7-4c67-a6c1-80fbf88e971d",
+              "port": "255790d0-88c7-40c8-811a-f039c5a47ea9"
+            },
+            "vertices": [
+              {
+                "x": 570,
+                "y": 230
+              },
+              {
+                "x": 660,
+                "y": 190
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "MCP Tool Request",
+              "description": "The AI Agent sends a tool invocation request with arguments to the MCP Server. The server validates the request and the agent's authorisation before executing the permitted tool.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": [
+                "e71f5342-68e5-4234-a446-2d79972d10fd",
+                "09d4fa11-b558-45ab-831a-5dea5e004bda"
+              ]
+            },
+            "labels": [
+              "MCP Tool Request"
+            ],
+            "id": "5a9fdf88-769a-4938-b146-348c105747e3",
+            "source": {
+              "cell": "a3794a0e-bde7-4c67-a6c1-80fbf88e971d",
+              "port": "7fa1d1bf-0689-4f90-a8cc-2eb2e77c079c"
+            },
+            "target": {
+              "cell": "cd33abac-77fd-4249-8ab1-0673d1b4cd5a",
+              "port": "f681253a-11a5-4f3d-b4fd-a7be68effdb0"
+            },
+            "vertices": [
+              {
+                "x": 860,
+                "y": 10
+              }
+            ]
+          },
+          {
             "position": {
-              "x": 420,
+              "x": 410,
               "y": 210.00000000000023
             },
             "size": {
-              "width": 90,
-              "height": 70
+              "width": 100,
+              "height": 80
             },
             "attrs": {
               "text": {
@@ -1363,8 +1467,8 @@
           },
           {
             "position": {
-              "x": 670,
-              "y": 130
+              "x": 680,
+              "y": 120.00000000000023
             },
             "size": {
               "width": 90,
@@ -1604,7 +1708,7 @@
           {
             "position": {
               "x": 1090,
-              "y": 200
+              "y": 185
             },
             "size": {
               "width": 112.5,
@@ -1845,11 +1949,11 @@
           {
             "position": {
               "x": 1030,
-              "y": 30
+              "y": 30.000000000000085
             },
             "size": {
-              "width": 60,
-              "height": 60
+              "width": 70,
+              "height": 80
             },
             "attrs": {
               "text": {
@@ -1964,8 +2068,8 @@
           },
           {
             "position": {
-              "x": 1246.25,
-              "y": -99.99999999999977
+              "x": 1266.25,
+              "y": -99.99999999999997
             },
             "size": {
               "width": 120,
@@ -2089,11 +2193,11 @@
           {
             "position": {
               "x": 1020,
-              "y": -99.99999999999977
+              "y": -139.99999999999977
             },
             "size": {
-              "width": 60,
-              "height": 60
+              "width": 90,
+              "height": 100
             },
             "attrs": {
               "text": {
@@ -2208,8 +2312,8 @@
           },
           {
             "position": {
-              "x": 1180,
-              "y": 310
+              "x": 1146.25,
+              "y": 320
             },
             "size": {
               "width": 100,
@@ -2328,12 +2432,12 @@
           },
           {
             "position": {
-              "x": 1433,
-              "y": 200
+              "x": 1366.25,
+              "y": 170
             },
             "size": {
-              "width": 60,
-              "height": 60
+              "width": 80,
+              "height": 90
             },
             "attrs": {
               "text": {
@@ -2477,7 +2581,10 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "e71f5342-68e5-4234-a446-2d79972d10fd",
+                "09d4fa11-b558-45ab-831a-5dea5e004bda"
+              ]
             },
             "labels": [
               "Retrieved Context"
@@ -2537,20 +2644,16 @@
             "id": "c867cec6-2d53-4fc7-a5ed-01d12a57b06a",
             "source": {
               "cell": "cd33abac-77fd-4249-8ab1-0673d1b4cd5a",
-              "port": "9744704a-3015-4bf6-9165-251fc3a6bd85"
+              "port": "243e7cb2-6e5e-48fc-a70c-93083c0b9f65"
             },
             "target": {
               "cell": "e0f53269-9279-40c3-b79b-2d84915c72b2",
-              "port": "9744704a-3015-4bf6-9165-251fc3a6bd85"
+              "port": "d76b0215-062d-413a-9b15-8b3110290591"
             },
             "vertices": [
               {
-                "x": 1340,
+                "x": 1220,
                 "y": 160
-              },
-              {
-                "x": 1280,
-                "y": 270
               }
             ]
           }
